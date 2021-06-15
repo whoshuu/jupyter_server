@@ -40,9 +40,9 @@ from jupyter_server.services.security import csp_report_uri
 non_alphanum = re.compile(r'[^A-Za-z0-9]')
 
 
-def file_log(message, loc):
+def file_log(message, extra="global"):
     with open("/tmp/debug.log", "a") as f:
-        f.write("SRV/handlers.py " + loc " " + message + "\n")
+        f.write("SRV/handlers.py " + extra " " + message + "\n")
 
 
 _sys_info_cache = None
